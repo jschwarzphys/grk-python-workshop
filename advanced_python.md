@@ -1,8 +1,10 @@
 - object orientation, inheritance
 - funciton annotation
 - new features 3.x+
+    - support
     - print function
     - f-strings
+    - true div
 - operator overloading
 - setup tools
 - argparse
