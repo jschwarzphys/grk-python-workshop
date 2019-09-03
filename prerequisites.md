@@ -83,7 +83,7 @@
       ```
 
 - import
-  ```
+  ```python
   # standard import
   import math
 
@@ -96,7 +96,7 @@
 
 - functions
 
-  ```
+  ```python
   # Function definition
   def greet(people):
     for person in people:
@@ -107,7 +107,7 @@
   ```
 
   - default arguments
-    ```
+    ```python
     def root(number, base=2):
       return math.pow(number, 1/base)
 
@@ -117,7 +117,7 @@
     ```
 
   - Lambda, usually passed to other functions
-    ```
+    ```python
     first = lambda x: x[0]
 
     # equal to
@@ -126,7 +126,7 @@
     ```
 
   - Positional arguments and keyword arguments
-    ```
+    ```python
     def func(pos_1, pos_2, *args, kwd_1="a", kwd_2="b", **kwds):
       pass
 
@@ -140,7 +140,7 @@
     ```
 
   - builtins
-    ```
+    ```python
     len(["a, "b", "c"])  # 3
     len("hello")  # 5
     len({"Hello": "world"}) # 1
