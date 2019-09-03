@@ -1,0 +1,11 @@
+- object orientation, inheritance
+- funciton annotation
+- new features 3.x+
+    - print function
+    - f-strings
+- operator overloading
+- setup tools
+- argparse
+- generator
+- try-catch
+- debugger

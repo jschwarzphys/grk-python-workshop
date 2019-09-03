@@ -1,0 +1,37 @@
+
+- variables
+    - integer
+    - float and its methods
+    - complex and its methods
+    - string and its methods
+    - list and its methods
+    - set and its methods
+    - dict and its methods
+    - tuple and its methods
+- import
+    - standard
+    - from
+    - as
+- functions
+    - builtins: sorted, len, print, round
+- slicing
+- if
+    - and, or, not
+    - else, elif
+- loops
+    - for
+    - range
+    - zip
+    - enumerate
+- with
+- open
+- comprehension
+    - list
+    - set
+    - dict
+- numpy
+    - array
+    - arithmetics
+    - linspace
+    - functions, sin
+    - max, sum, mean
