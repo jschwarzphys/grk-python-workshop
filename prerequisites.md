@@ -27,6 +27,7 @@
       ```python
       point = 1.2+3.4j
       other = point * 2  # arithmetics
+      point += 3.2  # in-place arithmetics
       x = other.real  # real part
       y = other.imag  # imaginary part
       ```
@@ -55,6 +56,8 @@
       numbers.append(7)  # append number
       numbers[0] = 3   # set item
       5 in numbers  # True
+
+      listed = "--".join([1, 2, 3, 4])  # 1--2--3--4
       ```
 
     - set
@@ -80,24 +83,109 @@
       ```
 
 - import
-    - standard
-    - from
-    - as
+  ```
+  # standard import
+  import math
+
+  # import parts
+  from time import sleep
+
+  # import as alias
+  import numpy as np
+  ```
+
 - functions
-    - builtins: sorted, len, print, round
-    - default arguments
-    - `*args`, `**kwds`
+
+  ```
+  # Function definition
+  def greet(people):
+    for person in people:
+        print("Hello", person)
+
+  # Call function
+  greet(["Lea", "Mark"])
+  ```
+
+  - default arguments
+    ```
+    def root(number, base=2):
+      return math.pow(number, 1/base)
+
+    root(4)  # use default
+    root(27, 3)  # use different base
+    root(3, base=1)  # named arguments
+    ```
+
+  - Lambda, usually passed to other functions
+    ```
+    first = lambda x: x[0]
+
+    # equal to
+    def first(x):
+      return x[0]
+    ```
+
+  - Positional arguments and keyword arguments
+    ```
+    def func(pos_1, pos_2, *args, kwd_1="a", kwd_2="b", **kwds):
+      pass
+
+    funct(6, 7, 8, 9, 10, kwd_2="c", hello="world")
+    # -> pos_1 = 6
+    # -> pos_2 = 7
+    # -> args = [8, 9, 10]
+    # -> kwd_1 = "a"
+    # -> kwd_2 = "c"
+    # -> kwds = {"hello": "world"}
+    ```
+
+  - builtins
+    ```
+    len(["a, "b", "c"])  # 3
+    len("hello")  # 5
+    len({"Hello": "world"}) # 1
+
+    sorted([3, 5, 1])  # 1, 3, 5
+    sorted("hello")  # e, h, l, l, o
+
+    print("Hello", "World")  # Hello World
+    print("Hello", "World", sep="")  # HelloWorld
+    print("Hello", "World", file=some_file)  # prints to file
+    print("Hello", "World", end="!")  # Hello World! (no new line)
+
+    round(3.1415)  # 3
+    round(3.1415, 2)  # 3.14
+
+    reversed([1, 2, 5])  # 5, 2, 1
+
+    sum([1, 2, 3, 5, 8])  # 19
+    max([1, 2, 3, 5, 8])  # 8
+    min([1, 2, 3, 5, 8])  # 1
+
+    abs(7)  # 7
+    abs(-4)  # 4
+
+    any([True, False, False])  # True
+    all([True, False, False])  # False
+
+    help(int)  # print help about object
+    dir(int)  # lists all attributes of object
+    vars(int)  # lists all attributes and its values
+
+    name = input("Please enter name: ")  # prompt user to enter name
+    ```
+
 - slicing
 - if
     - and, or, not
     - else, elif
 - loops
     - for
+    - for-else
     - range
     - zip
     - enumerate
-- with
-- open
+- with, open
 - comprehension
     - list
     - set
