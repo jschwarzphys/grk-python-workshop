@@ -141,7 +141,7 @@
 
   - builtins
     ```python
-    len(["a, "b", "c"])  # 3
+    len(["a", "b", "c"])  # 3
     len("hello")  # 5
     len({"Hello": "world"}) # 1
 
