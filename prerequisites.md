@@ -57,7 +57,7 @@
       numbers[0] = 3   # set item
       5 in numbers  # True
 
-      listed = "--".join([1, 2, 3, 4])  # 1--2--3--4
+      listed = "--".join(["A", "B", "C", "D"])  # A--B--C--D
       ```
 
     - set
@@ -77,8 +77,8 @@
       phonebook["Bob"] = 3456789  # update item
       phonebook["David"] = 1357924  # add item
       "Eva" in phonebook  # False
-      phonesbook.keys()  # Alice, Bob, David
-      phonesbook.values()  # 1234567, 3456789, 1357924
+      phonebook.keys()  # Alice, Bob, David
+      phonebook.values()  # 1234567, 3456789, 1357924
       phonebook.items()  # (Alice, 1234567), ...
       ```
 
@@ -176,9 +176,47 @@
     ```
 
 - slicing
+  ```python
+  primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+  primes[3]  # access item: 7
+  primes[5]  # access item: 13
+  primes[3:5]  # range: 7, 11
+  primes[3:]  # range: 7, 11, 13, 17, 19, 23, 29
+  primes[:5]  # range: 2, 3, 5, 7, 11
+  primes[:-3]  # range: 2, 3, 5, 7, 11, 13, 17
+
+  primes[::2]  # steps: 2, 5, 11, 17, 23
+  primes[1::2]  # steps: 3, 7, 13, 19, 29
+  ```
+
 - if
-    - and, or, not
-    - else, elif
+  ```python
+  if 3 < 5:
+      print("Three is less than five")
+  ```
+
+  - and, or, not
+    ```python
+    if "eva" in phonebook and phonebook["eva"] == 12345:
+      print("Her number is 12345")
+
+    if not number > 10:
+      print("Number is too small")
+
+    if "eva" not in phonebook:
+      print("We don't have Eva's number.")
+    ```
+
+  - else, elif
+    ```python
+    if command == "help":
+        print_help()
+    elif command == "exit":
+        sys.exit(0)
+    else:
+        print("Unknown command")
+    ```
 - loops
     - for
     - for-else
