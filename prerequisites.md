@@ -91,6 +91,23 @@ phonebook.values()  # 1234567, 3456789, 1357924
 phonebook.items()  # (Alice, 1234567), ...
 ```
 
+### Mutable and immutable objects
+
+
+```python
+# Immutable
+orignal = "hello"
+reference = original
+reference = "hi"
+# original is still "hello"
+
+# Mutable
+greetings = ["hello"]
+reference = greetings
+reference.append("hi")
+# both are now ["hello", "hi"]
+```
+
 ## import
 <!-- append pre.py -->
 ```python
