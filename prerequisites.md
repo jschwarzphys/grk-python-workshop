@@ -228,7 +228,7 @@
         print("The square of %d is %d." % (number, number**2))
       ```
     - zip
-      ```
+      ```python
       positions = [1, 2, 4, 8]
       times = [0.3, 0.6, 0.8, 1.0]
 
@@ -246,7 +246,7 @@
       for event in events:
         if is_higgs(event):
           print("We've found the higgs.")
-          continue
+          break  # No need to find a second
       else:
         print("There was no higgs in the list.")
       ```
@@ -273,7 +273,7 @@
   ```
 
 - numpy
-  ```
+  ```python
   import numpy as np
   a = np.array([1, 2, 3, 4, 5])
 
