@@ -91,6 +91,17 @@ phonebook.values()  # 1234567, 3456789, 1357924
 phonebook.items()  # (Alice, 1234567), ...
 ```
 
+### Other values
+<!-- append pre.py -->
+```python
+# boolean
+a = True
+b = False
+
+# special value
+c = None
+```
+
 ### Mutable and immutable objects
 
 <!-- append pre.py -->
@@ -268,6 +279,36 @@ else:
 ```python
 for fruit in ["banana", "apple", "peach"]:
     print("I like", fruit)
+```
+
+```python
+while True:
+    command = input("Please type 'exit': ")
+    if command == "exit":
+        break
+```
+
+### continue, break
+
+<!-- append pre.py
+```
+def is_prime(x):
+  return (x % 2 != 0)
+```
+-->
+
+
+<!-- append pre.py -->
+```python
+for i in range(10):
+    if is_prime(i):
+        # skip prime numbers
+        continue
+
+for i in range(10):
+    if is_prime(i):
+        # found prime number, exit loop
+        break
 ```
 
 ### range
