@@ -93,10 +93,10 @@ phonebook.items()  # (Alice, 1234567), ...
 
 ### Mutable and immutable objects
 
-
+<!-- append pre.py -->
 ```python
 # Immutable
-orignal = "hello"
+original = "hello"
 reference = original
 reference = "hi"
 # original is still "hello"
