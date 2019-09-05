@@ -1,6 +1,6 @@
 doxec:
   image: python:3
   script:
-    - pip install doxec
+    - pip install doxec numpy
     - doxec *.md
 
