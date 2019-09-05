@@ -1,0 +1,6 @@
+doxec:
+  image: python:3
+  script:
+    - pip install doxec
+    - doxec *.md
+
