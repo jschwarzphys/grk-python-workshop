@@ -218,19 +218,89 @@
         print("Unknown command")
     ```
 - loops
-    - for
-    - for-else
+  ```python
+  for fruit in ["banana", "apple", "peach"]:
+    print("I like", fruit)
+  ```
     - range
+      ```python
+      for number in range(10):
+        print("The square of %d is %d." % (number, number**2))
+      ```
     - zip
+      ```
+      positions = [1, 2, 4, 8]
+      times = [0.3, 0.6, 0.8, 1.0]
+
+      for position, time in zip(positions, times):
+        print("It travelled %g m in %g s." % (position, time))
+      ```
     - enumerate
+      ```python
+      for i, movie in enumerate(["Avangers", "Avatar", "Titanic"]):
+        print("The %d-th movie is %s" % (i, movie))
+      ```
+
+    - for-else
+      ```python
+      for event in events:
+        if is_higgs(event):
+          print("We've found the higgs.")
+          continue
+      else:
+        print("There was no higgs in the list.")
+      ```
+
 - with, open
+  ```python
+  with open("measurement.txt") as data:
+    for line in data:
+      pass
+  ```
 - comprehension
-    - list
-    - set
-    - dict
+  ```python
+  # list comprehension
+  squares = [i**2 for i in range(10)]
+  # -> [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+  # set comprehension
+  squares = {i**2 for i in range(10)}
+  # -> {0, 1, 4, 9, 16, 25, 36, 49, 64, 81} 
+
+  # dict comprehension
+  squares = {i: i**2 for i in range(3)}
+  # -> {0: 0, 1: 1, 2: 4}
+  ```
+
 - numpy
-    - array
-    - arithmetics
-    - linspace
+  ```
+  import numpy as np
+  a = np.array([1, 2, 3, 4, 5])
+
+  b = a * 2 + 3  # piecewise arithemtics
+  c = a + c  # piecewise arithemtics of two arrays
+  ```
+    - linspace, logspace and arange
+      ```python
+      a = np.arange(4)  # 0, 1, 2, 3
+      b = np.linspace(0, 1, 5)  # 0, 0.25, 0.5, 0.75, 1
+      c = np.logspace(0, 6, 4)  # 1e0, 1e2, 1e4, 1e6
+      ```
+
     - functions, sin
+      ```python
+      grid = np.linspace(0, 2 * np.pi, 200)
+
+      sin = np.sin(grid)  # piecewise evaluation
+      cos = np.cos(grid)  # piecewise evaluation
+      ```
     - max, sum, mean
+      ```python
+      a = np.random.normal(size=10)
+
+      a.min()  # smallest element in array
+      a.max()  # largest element in array
+      a.mean()
+      a.sum()
+      a.std()  # standard deviation
+      ```
