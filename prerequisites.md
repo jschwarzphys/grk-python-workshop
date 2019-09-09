@@ -47,6 +47,13 @@ greeting[1:5]  # substring: ello
 
 name = "Uni" + "Freiburg"  # concatination
 scream =  "a" * 10  # aaaaaaaaaa
+
+
+# String formatting
+to_dave = "Hello %s" % "David"
+to_gina = "Hello {:s}".format("Gina")
+
+cake = "There are %06.2f pieces of cake." % 3.1415
 ```
 
 ### tuple
