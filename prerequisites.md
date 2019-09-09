@@ -10,6 +10,13 @@ favorite_number = 42
 hello = "World"
 ```
 
+<!-- append pre.py
+```
+assert favorite_number == 42
+assert hello == "World"
+```
+-->
+
 ### integer
 <!-- append pre.py -->
 ```python
@@ -18,6 +25,13 @@ other = (num * 2)**2 + 3  # arithmethics
 num += 1  # in-place arithmetics
 ```
 
+<!-- append pre.py
+```
+assert num == 4
+assert other == 39
+```
+-->
+
 ### float
 <!-- append pre.py -->
 ```python
@@ -25,6 +39,12 @@ circle = 3.14
 cake = (circle * 2)**2 + 3  # arithmethics
 circle *= 2  # in-place arithmetics
 ```
+<!-- append pre.py
+```
+assert abs(circle - 6.28) < 1e-6
+assert abs(cake - 42.4384) < 1e-6
+```
+-->
 
 ### complex
 <!-- append pre.py -->
@@ -35,15 +55,26 @@ point += 3.2  # in-place arithmetics
 x = other.real  # real part
 y = other.imag  # imaginary part
 ```
+<!-- append pre.py
+```
+assert abs(point.real - 4.4) < 1e-6
+assert abs(point.imag - 3.4) < 1e-6
+assert abs(other.real - 2.4) < 1e-6
+assert abs(other.imag - 6.8) < 1e-6
+assert abs(x - 2.4) < 1e-6
+assert abs(y - 6.8) < 1e-6
+```
+-->
+
 ### string
 <!-- append pre.py -->
 ```python
 greeting = "Hello, World!"
 upper = greeting.upper()  # HELLO, WORLD!
 lower = greeting.lower()  # hello, world!
-greeting.startswith("Hello")  # True
-greeting.endswith("Earth!")  # False
-greeting[1:5]  # substring: ello
+start = greeting.startswith("Hello")  # True
+end = greeting.endswith("Earth!")  # False
+sub = greeting[1:5]  # substring: ello
 
 name = "Uni" + "Freiburg"  # concatination
 scream =  "a" * 10  # aaaaaaaaaa
@@ -56,12 +87,37 @@ to_gina = "Hello {:s}".format("Gina")
 cake = "There are %06.2f pieces of cake." % 3.1415
 ```
 
+<!-- append pre.py
+```python
+assert greeting == "Hello, World!"
+assert upper == "HELLO, WORLD!"
+assert lower == "hello, world!"
+assert start
+assert not end 
+assert sub == "ello"
+
+assert name == "UniFreiburg"
+assert scream == "aaaaaaaaaa"
+
+assert to_dave == "Hello David"
+assert to_gina == "Hello Gina"
+assert cake == "There are 003.14 pieces of cake."
+```
+-->
+
 ### tuple
 <!-- append pre.py -->
 ```python
 point = (3.42, 4)  # 2-tuple
-point[0]  # 3.42
+first = point[0]  # 3.42
 ```
+
+<!-- append pre.py
+```
+assert point == (3.42, 4)
+assert first == 3.42
+```
+-->
 
 ### list
 <!-- append pre.py -->
@@ -73,14 +129,25 @@ numbers[0] = 3   # set item
 
 listed = "--".join(["A", "B", "C", "D"])  # A--B--C--D
 ```
+<!-- append pre.py
+```
+assert numbers == [3, 2, 3, 5, 7]
+assert listed == "A--B--C--D"
+```
+-->
 
 ### set
 <!-- append pre.py -->
 ```python
-numbers = set([1, 2, 3, 5])
+numbers = {1, 2, 3, 5}
 numbers.add(7)  # add number
 9 in numbers  # False
 ```
+<!-- append pre.py
+```
+assert numbers == {1, 2, 3, 5, 7}
+```
+-->
 
 ### dict
 <!-- append pre.py -->
@@ -97,6 +164,15 @@ phonebook.keys()  # Alice, Bob, David
 phonebook.values()  # 1234567, 3456789, 1357924
 phonebook.items()  # (Alice, 1234567), ...
 ```
+<!-- append pre.py
+```
+assert phonebook == {
+    "Alice": 1234567,
+    "Bob": 3456789,
+    "David": 1357924,
+}
+```
+-->
 
 ### Other values
 <!-- append pre.py -->
@@ -125,6 +201,12 @@ reference = greetings
 reference.append("hi")
 # both are now ["hello", "hi"]
 ```
+<!-- append pre.py
+```
+assert original == "hello"
+assert reference == ["hello", "hi"]
+```
+-->
 
 ## import
 <!-- append pre.py -->
@@ -138,6 +220,13 @@ from time import sleep
 # import as alias
 import numpy as np
 ```
+<!-- append pre.py
+```
+assert math
+assert sleep
+assert np
+```
+-->
 
 ## functions
 <!-- append pre.py -->
@@ -157,10 +246,17 @@ greet(["Lea", "Mark"])
 def root(number, base=2):
     return math.pow(number, 1/base)
 
-root(4)  # use default
-root(27, 3)  # use different base
-root(3, base=1)  # named arguments
+a = root(4)  # use default
+b = root(27, 3)  # use different base
+c = root(3, base=1)  # named arguments
 ```
+<!-- append pre.py
+```
+assert a == 2
+assert b == 3
+assert c == 3
+```
+-->
 
 ### Lambda, usually passed to other functions
 <!-- append pre.py -->
@@ -370,17 +466,24 @@ with open("measurement.txt") as data:
 <!-- append pre.py -->
 ```python
 # list comprehension
-squares = [i**2 for i in range(10)]
+squares_list = [i**2 for i in range(10)]
 # -> [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 # set comprehension
-squares = {i**2 for i in range(10)}
+squares_set = {i**2 for i in range(10)}
 # -> {0, 1, 4, 9, 16, 25, 36, 49, 64, 81} 
 
 # dict comprehension
-squares = {i: i**2 for i in range(3)}
+squares_dict = {i: i**2 for i in range(3)}
 # -> {0: 0, 1: 1, 2: 4}
 ```
+<!-- append pre.py
+```
+assert squares_list == [0, 1, 4, 9, 16, 25, 36, 49, 64, 81] 
+assert squares_set == {0, 1, 4, 9, 16, 25, 36, 49, 64, 81}
+assert squares_dict == {0: 0, 1: 1, 2: 4}
+```
+-->
 
 ## numpy
 <!-- append pre.py -->
@@ -391,6 +494,13 @@ a = np.array([1, 2, 3, 4, 5])
 b = a * 2 + 3  # piecewise arithemtics
 c = a + b  # piecewise arithemtics of two arrays
 ```
+<!-- append pre.py
+```
+assert (a == [1, 2, 3, 4, 5]).all()
+assert (b == [5, 7, 9, 11, 13]).all()
+assert (c == [6, 9, 12, 15, 18]).all()
+```
+-->
 
 ### linspace, logspace and arange
 <!-- append pre.py -->
@@ -399,6 +509,13 @@ a = np.arange(4)  # 0, 1, 2, 3
 b = np.linspace(0, 1, 5)  # 0, 0.25, 0.5, 0.75, 1
 c = np.logspace(0, 6, 4)  # 1e0, 1e2, 1e4, 1e6
 ```
+<!-- append pre.py
+```
+assert (a == [0, 1, 2, 3]).all()
+assert (b == [0, 0.25, 0.5, 0.75, 1]).all()
+assert (c == [1, 100, 1e4, 1e6]).all()
+```
+-->
 
 ### functions, sin
 <!-- append pre.py -->
