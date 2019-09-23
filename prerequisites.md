@@ -23,7 +23,7 @@ assert hello == "World"
 <!-- append pre.py -->
 ```python
 num = 3
-other = (num * 2)**2 + 3  # arithmethics
+other = (num * 2)**2 + 3  # arithmetics
 num += 1  # in-place arithmetics
 ```
 
@@ -38,7 +38,7 @@ assert other == 39
 <!-- append pre.py -->
 ```python
 circle = 3.14
-cake = (circle * 2)**2 + 3  # arithmethics
+cake = (circle * 2)**2 + 3  # arithmetics
 circle *= 2  # in-place arithmetics
 ```
 <!-- append pre.py
@@ -78,7 +78,7 @@ start = greeting.startswith("Hello")  # True
 end = greeting.endswith("Earth!")  # False
 sub = greeting[1:5]  # substring: ello
 
-name = "Uni" + "Freiburg"  # concatination
+name = "Uni" + "Freiburg"  # concatenation
 scream =  "a" * 10  # aaaaaaaaaa
 
 
@@ -276,7 +276,7 @@ def first(x):
 def func(pos_1, pos_2, *args, kwd_1="a", kwd_2="b", **kwds):
     pass
 
-    funct(6, 7, 8, 9, 10, kwd_2="c", hello="world")
+func(6, 7, 8, 9, 10, kwd_2="c", hello="world")
     # -> pos_1 = 6
     # -> pos_2 = 7
     # -> args = [8, 9, 10]
@@ -493,8 +493,8 @@ assert squares_dict == {0: 0, 1: 1, 2: 4}
 import numpy as np
 a = np.array([1, 2, 3, 4, 5])
 
-b = a * 2 + 3  # piecewise arithemtics
-c = a + b  # piecewise arithemtics of two arrays
+b = a * 2 + 3  # piecewise arithmetics
+c = a + b  # piecewise arithmetics of two arrays
 ```
 <!-- append pre.py
 ```
