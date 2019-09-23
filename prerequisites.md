@@ -1,7 +1,9 @@
 # Prerequisites
 
+Please have a look at the examples below. If something looks unfamiliar, please,
+read up on it before the start of the workshop.
 
-## variables
+# variables
 
 <!-- write pre.py -->
 ```python
@@ -17,7 +19,7 @@ assert hello == "World"
 ```
 -->
 
-### integer
+## integer
 <!-- append pre.py -->
 ```python
 num = 3
@@ -32,7 +34,7 @@ assert other == 39
 ```
 -->
 
-### float
+## float
 <!-- append pre.py -->
 ```python
 circle = 3.14
@@ -46,7 +48,7 @@ assert abs(cake - 42.4384) < 1e-6
 ```
 -->
 
-### complex
+## complex
 <!-- append pre.py -->
 ```python
 point = 1.2+3.4j
@@ -66,7 +68,7 @@ assert abs(y - 6.8) < 1e-6
 ```
 -->
 
-### string
+## string
 <!-- append pre.py -->
 ```python
 greeting = "Hello, World!"
@@ -105,7 +107,7 @@ assert cake == "There are 003.14 pieces of cake."
 ```
 -->
 
-### tuple
+## tuple
 <!-- append pre.py -->
 ```python
 point = (3.42, 4)  # 2-tuple
@@ -119,7 +121,7 @@ assert first == 3.42
 ```
 -->
 
-### list
+## list
 <!-- append pre.py -->
 ```python
 numbers = [1, 2, 3, 5]
@@ -136,7 +138,7 @@ assert listed == "A--B--C--D"
 ```
 -->
 
-### set
+## set
 <!-- append pre.py -->
 ```python
 numbers = {1, 2, 3, 5}
@@ -149,7 +151,7 @@ assert numbers == {1, 2, 3, 5, 7}
 ```
 -->
 
-### dict
+## dict
 <!-- append pre.py -->
 ```python
 phonebook = {
@@ -174,7 +176,7 @@ assert phonebook == {
 ```
 -->
 
-### Other values
+## Other values
 <!-- append pre.py -->
 ```python
 # boolean
@@ -185,7 +187,7 @@ b = False
 c = None
 ```
 
-### Mutable and immutable objects
+## Mutable and immutable objects
 
 <!-- append pre.py -->
 ```python
@@ -208,7 +210,7 @@ assert reference == ["hello", "hi"]
 ```
 -->
 
-## import
+# import
 <!-- append pre.py -->
 ```python
 # standard import
@@ -228,7 +230,7 @@ assert np
 ```
 -->
 
-## functions
+# functions
 <!-- append pre.py -->
 ```python
 # Function definition
@@ -240,7 +242,7 @@ def greet(people):
 greet(["Lea", "Mark"])
 ```
 
-### default arguments
+## default arguments
 <!-- append pre.py -->
 ```python
 def root(number, base=2):
@@ -258,7 +260,7 @@ assert c == 3
 ```
 -->
 
-### Lambda, usually passed to other functions
+## Lambda, usually passed to other functions
 <!-- append pre.py -->
 ```python
 first = lambda x: x[0]
@@ -268,7 +270,7 @@ def first(x):
     return x[0]
 ```
 
-### Positional arguments and keyword arguments
+## Positional arguments and keyword arguments
 <!-- append pre.py -->
 ```python
 def func(pos_1, pos_2, *args, kwd_1="a", kwd_2="b", **kwds):
@@ -283,7 +285,7 @@ def func(pos_1, pos_2, *args, kwd_1="a", kwd_2="b", **kwds):
     # -> kwds = {"hello": "world"}
 ```
 
-### builtins
+## builtins
 
 <!-- append pre.py
 ```
@@ -329,7 +331,7 @@ vars(int)  # lists all attributes and its values
 name = input("Please enter name: ")  # prompt user to enter name
 ```
 
-## slicing
+# slicing
 <!-- append pre.py -->
 ```python
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -345,7 +347,7 @@ primes[::2]  # steps: 2, 5, 11, 17, 23
 primes[1::2]  # steps: 3, 7, 13, 19, 29
 ```
 
-## if
+# if
 <!-- append pre.py -->
 ```python
 if 3 < 5:
@@ -366,7 +368,7 @@ if "eva" not in phonebook:
     print("We don't have Eva's number.")
 ```
 
-### else, elif
+## else, elif
 <!-- append pre.py -->
 ```python
 command = "quit"
@@ -377,7 +379,7 @@ elif command == "exit":
 else:
     print("Unknown command")
 ```
-## loops
+# loops
 <!-- append pre.py -->
 ```python
 for fruit in ["banana", "apple", "peach"]:
@@ -391,7 +393,7 @@ while True:
         break
 ```
 
-### continue, break
+## continue, break
 
 <!-- append pre.py
 ```
@@ -414,13 +416,13 @@ for i in range(10):
         break
 ```
 
-### range
+## range
 <!-- append pre.py -->
 ```python
 for number in range(10):
     print("The square of %d is %d." % (number, number**2))
 ```
-### zip
+## zip
 <!-- append pre.py -->
 ```python
 positions = [1, 2, 4, 8]
@@ -429,14 +431,14 @@ times = [0.3, 0.6, 0.8, 1.0]
 for position, time in zip(positions, times):
     print("It travelled %g m in %g s." % (position, time))
 ```
-### enumerate
+## enumerate
 <!-- append pre.py -->
 ```python
 for i, movie in enumerate(["Avengers", "Avatar", "Titanic"]):
     print("The %d-th movie is %s" % (i, movie))
 ```
 
-### for-else
+## for-else
 <!-- append pre.py
 ```
 events = [False, False, False, True, False, True]
@@ -455,14 +457,14 @@ else:
     print("There was no higgs in the list.")
 ```
 
-## with, open
+# with, open
 <!-- append pre.py -->
 ```python
 with open("measurement.txt") as data:
     for line in data:
         pass
 ```
-## comprehension
+# comprehension
 <!-- append pre.py -->
 ```python
 # list comprehension
@@ -485,7 +487,7 @@ assert squares_dict == {0: 0, 1: 1, 2: 4}
 ```
 -->
 
-## numpy
+# numpy
 <!-- append pre.py -->
 ```python
 import numpy as np
@@ -502,7 +504,7 @@ assert (c == [6, 9, 12, 15, 18]).all()
 ```
 -->
 
-### linspace, logspace and arange
+## linspace, logspace and arange
 <!-- append pre.py -->
 ```python
 a = np.arange(4)  # 0, 1, 2, 3
@@ -516,26 +518,6 @@ assert (b == [0, 0.25, 0.5, 0.75, 1]).all()
 assert (c == [1, 100, 1e4, 1e6]).all()
 ```
 -->
-
-### functions, sin
-<!-- append pre.py -->
-```python
-grid = np.linspace(0, 2 * np.pi, 200)
-
-sin = np.sin(grid)  # piecewise evaluation
-cos = np.cos(grid)  # piecewise evaluation
-```
-### max, sum, mean
-<!-- append pre.py -->
-```python
-a = np.random.normal(size=10)
-
-a.min()  # smallest element in array
-a.max()  # largest element in array
-a.mean()
-a.sum()
-a.std()  # standard deviation
-```
 
 <!-- console_output
 ```
