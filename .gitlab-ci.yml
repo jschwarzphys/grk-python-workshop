@@ -1,10 +1,17 @@
+stages:
+  - test
+  - build
+  - deploy
+
 doxec:
   image: python:3
+  stage: test
   script:
     - pip install doxec numpy
     - doxec *.md
 
 build_image:
+  stage: build
   variables:
     DOCKER_FILE: Dockerfile
     TAG: latest
@@ -15,6 +22,23 @@ build_image:
     # The script gets overwritten in jobs tagged docker-image-build
     - ignore
   except:
-  - tags
+    - tags
   tags:
     - docker-image-build
+
+push_to_hub:
+  stage: deploy
+  except:
+    - tags
+  image: matthewfeickert/skopeo-docker:latest
+  variables:
+    TAG: latest
+    IMAGE_NAME: base-python
+  script:
+    - /home/docker/skopeo copy
+      --src-creds ${CI_REGISTRY_USER}:${CI_BUILD_TOKEN}
+      --dest-creds ${DH_USERNAME}:${DH_PASSWORD}
+      docker://${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:${TAG}
+      docker://${DH_USERNAME}/${IMAGE_NAME}:${TAG}
+
+
