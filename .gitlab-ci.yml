@@ -1,6 +1,7 @@
 stages:
   - test
   - build
+  - post_test
   - deploy
 
 doxec:
@@ -25,6 +26,12 @@ build_image:
     - tags
   tags:
     - docker-image-build
+
+setup_test:
+  image: ${CI_REGISTRY_IMAGE}/base-python:latest
+  stage: post_test
+  script:
+    - python setup_test.py
 
 push_to_hub:
   stage: deploy
