@@ -5,7 +5,7 @@ RUN \
   apt-get -qq -y update && \
   apt-get -qq -y upgrade && \
   apt-get install -y jq git tree hdf5-tools bash-completion && \
-  apt-get install -y ffmpeg && \
+  apt-get install -y ffmpeg vim emacs&& \
   apt-get clean && \
   rm -rf /var/lib/apt-get/lists/* && \
   true
