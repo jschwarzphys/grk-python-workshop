@@ -6,6 +6,7 @@ RUN \
   apt-get -qq -y upgrade && \
   apt-get install -y jq git tree hdf5-tools bash-completion && \
   apt-get install -y ffmpeg vim emacs && \
+  apt-get install -y gcc libopenmpi-dev openmpi-bin && \
   apt-get clean && \
   rm -rf /var/lib/apt-get/lists/* && \
   true
